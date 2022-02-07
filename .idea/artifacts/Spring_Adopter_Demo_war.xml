@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="demo-service:war">
+  <artifact type="war" name="Spring Adopter Demo:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>demo-service</module>
+        <module>Spring Adopter Demo</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="archive" name="AdopterWebDemo.war">
-      <element id="artifact" artifact-name="demo-service:war exploded" />
+      <element id="artifact" artifact-name="Spring Adopter Demo:war exploded" />
     </root>
   </artifact>
 </component>

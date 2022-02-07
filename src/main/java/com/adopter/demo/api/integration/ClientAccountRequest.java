@@ -8,5 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class ClientAccountRequest {
+    private String id;
 }

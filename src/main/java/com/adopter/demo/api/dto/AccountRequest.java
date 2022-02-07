@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @ApiModel(description = "Represents account verification request.")
 public class AccountRequest {
+
+    private String id;
 }

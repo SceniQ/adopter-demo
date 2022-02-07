@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="demo-service:war exploded">
+  <artifact type="exploded-war" name="Spring Adopter Demo:war exploded">
     <output-path>$PROJECT_DIR$/target/AdopterWebDemo</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>demo-service</module>
+        <module>Spring Adopter Demo</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="demo-service" />
+          <element id="module-output" name="Spring Adopter Demo" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE" />
@@ -138,7 +138,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/AdopterWebDemo/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="demo-service/web/Web" />
+      <element id="javaee-facet-resources" facet="Spring Adopter Demo/web/Web" />
     </root>
   </artifact>
 </component>
