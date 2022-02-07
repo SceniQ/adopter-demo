@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @ApiModel(description = "Represents remittance transaction response.")
 public class TransactionResponse {
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -17,6 +18,10 @@ public class SystemConfig implements Serializable {
 
     @EmbeddedId
     private SystemConfigId id;
+    @Column(nullable = false)
+    private String configKey;
+    @Column(nullable = false)
+    private String configValue;
 
     @Data
     @Builder
@@ -24,8 +29,8 @@ public class SystemConfig implements Serializable {
     @NoArgsConstructor
     @Embeddable
     public static class SystemConfigId implements Serializable {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @NotNull(message = "config id cannot be null")
+        @Column(nullable = false)
         private Long id;
         @Column
         private String serviceName;

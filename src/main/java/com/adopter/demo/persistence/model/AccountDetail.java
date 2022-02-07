@@ -14,11 +14,15 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AccountDetail implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String phoneNumber;
+    @Column(nullable=false)
+    private String customerName;
+    @Column(nullable=false)
+    private String countryCode;
+    @Column(nullable = false)
+    private String email;
 }
