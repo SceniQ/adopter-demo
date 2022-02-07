@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} [%-6p] %C{1}.%M(%F:%L) – %m%n</Property>
+        <Property name="APP_LOG_ROOT">C:/Users/bralotz/Downloads/logs/bank_test</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+
+        <RollingFile name="mfserror"
+                     fileName="${APP_LOG_ROOT}/ADOPTER_DEMO_error.log"
+                     filePattern="${APP_LOG_ROOT}/ADOPTER_DEMO_error.%d{yyyy-MM-dd}-%i.log">
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+
+        <RollingFile name="mfsinfo"
+                     fileName="${APP_LOG_ROOT}/ADOPTER_DEMO_info.log"
+                     filePattern="${APP_LOG_ROOT}/ADOPTER_DEMO_info.%d{yyyy-MM-dd}-%i.log">
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+
+        <RollingFile name="adopterdebug"
+                     fileName="${APP_LOG_ROOT}/ADOPTER_DEMO_debug.log"
+                     filePattern="${APP_LOG_ROOT}/ADOPTER_DEMO_debug.%d{yyyy-MM-dd}-%i.log">
+            <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+
+        <Logger name="com.adopter.demo" additivity="false">
+            <AppenderRef ref="error" />
+            <AppenderRef ref="info" />
+            <AppenderRef ref="console" />
+        </Logger>
+
+        <Root level="trace">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+</Configuration>
